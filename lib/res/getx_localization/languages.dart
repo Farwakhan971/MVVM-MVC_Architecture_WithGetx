@@ -8,6 +8,8 @@ class AppLanguages extends Translations {
       'password_hint': 'Enter Password',
       'login_button': 'Login',
       'signup_button': 'Sign Up',
+      'Internet_exception': 'we are unable to show you! please check your internet connection',
+      'welcome': 'Welcome Back!'
       // Add all other translations here
     },
     'ur_PK': {

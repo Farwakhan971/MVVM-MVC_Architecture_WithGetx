@@ -5,7 +5,6 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:mvvm_mvc/res/colors/app_color.dart';
 
 class Utils{
-
    static void changeFieldFocus(BuildContext context, FocusNode current, FocusNode next){
      current.unfocus();
      FocusScope.of(context).requestFocus(next);
