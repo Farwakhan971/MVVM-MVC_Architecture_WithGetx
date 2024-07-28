@@ -4,6 +4,8 @@ import 'package:mvvm_mvc/data/response/status.dart';
 import 'package:mvvm_mvc/res/routes/routes_name.dart';
 import 'package:mvvm_mvc/view_model/home/home_controller.dart';
 import 'package:mvvm_mvc/view_model/shared_preferences/shared_preferences_controller.dart';
+
+import '../../res/components/internet_exceptions.dart';
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -46,9 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
             });
           case Status.ERROR:
-          return Center(child: Text('Request not SucessFull. some error'));
+            if(homeControllerGet.Rxerror.value == "type 'int' is not a subtype of type 'String?'"){
+              return InternetException(onPress: (){
+
+              });
+
+            }
+            return Container();
         }
-      })
+        }
+      )
     );
   }
 }
