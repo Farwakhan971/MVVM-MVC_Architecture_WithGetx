@@ -10,8 +10,8 @@ class RoundButton extends StatefulWidget {
   const RoundButton({
     required this.buttonText,
     required this.onPress,
-    this.height = 100,
-    this.width = 100,
+    this.height = 60,
+    this.width = 200,
     this.buttonColor = AppColors.blackColor,
     this.textColor = AppColors.whiteColor,
     this.loading = false,

@@ -1,37 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mvvm_mvc/res/routes/routes_name.dart';
+import 'package:mvvm_mvc/view_model/shared_preferences/shared_preferences_controller.dart';
 
 class HomeScreen extends StatelessWidget {
+  UserPreferences up = UserPreferences();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('title'.tr),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'email_hint'.tr,
-              ),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'password_hint'.tr,
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('login_button'.tr),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('signup_button'.tr),
-            ),
-          ],
-        ),
+        actions: [
+          IconButton(onPressed: (){
+            up.removeUser().then((value) {
+              Get.toNamed(RoutesName.loginScreen);
+            });
+          }, icon: Icon(Icons.logout))
+        ],
+        title: Text('Home'.tr),
+
       ),
     );
   }
