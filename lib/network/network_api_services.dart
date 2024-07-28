@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:mvvm_mvc/data/app_exceptions.dart';
 import 'package:mvvm_mvc/network/base_api_services.dart';
 import 'package:http/http.dart' as http;
